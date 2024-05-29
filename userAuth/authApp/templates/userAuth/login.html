@@ -1,0 +1,14 @@
+<!-- login.html -->
+<h2>Login</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if enable_2fa %}
+    <label for="otp">Enter OTP:</label>
+    <input type="text" id="otp" name="otp" required>
+    {% endif %}
+    <button type="submit">Login</button>
+</form>
+
+</br></br>
+<a href="{% url 'index' %}">Return </a>

@@ -1,0 +1,27 @@
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature Prototype: MitID and alternative authentication methods</title>
+</head>
+<body>
+    <h1>Feature Prototype: MitID and alternative authentication</h1>
+    {% if user.is_authenticated %}
+        <p>Welcome, {{ user.username }}!</p>
+        <a href="{% url 'logout' %}">Logout</a>
+    </br></br>
+        <a href="{% url 'enable_2fa' %}">Enable 2fa</a></br></br>
+        <a href="{% url 'disable_2fa' %}">Disable 2fa</a></br></br>
+        <a href="{% url 'setup_otp' %}">Setup 2fa</a></br></br>
+    {% else %}
+        <p>You are not logged in.</p>
+    </br></br>
+        <a href="{% url 'login' %}">Login</a> </br></br>
+        <a href="{% url 'mitid_login' %}">Login with MitID</a></br></br>
+        <a href="{% provider_login_url 'google' method='oauth2' %}">Login with Google</a></br></br>
+        <a href="{% url 'signup' %}">Signup</a></br></br>
+    {% endif %}
+</body>
+</html>

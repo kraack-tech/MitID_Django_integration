@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://unpkg.com/@criipto/auth-js"></script> <!-- Criipto SDK Script -->
+    <title>MitID Login Page</title>
+</head>
+<body>
+  <h1>MitID Login Page</h1>
+</br>
+</br>
+  <button id="login-button-popup">Login with MitID</button>
+
+  <script type="text/javascript">
+      var criiptoAuth = new CriiptoAuth({
+      domain: 'userauth2-test.criipto.id',
+      clientID: 'urn:my:application:identifier:491761',
+      store: sessionStorage,
+    });
+    document
+      .getElementById('login-button-popup')
+      .addEventListener('click', () => {
+        criiptoAuth.redirect.authorize({
+          redirectUri: 'http://localhost:8001/mitid-success/',
+          prompt: 'login',
+        });
+      });
+  </script>
+</body>
+</html>
