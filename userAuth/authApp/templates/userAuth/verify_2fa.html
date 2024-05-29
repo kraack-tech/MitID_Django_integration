@@ -1,0 +1,8 @@
+<!-- verify_2fa.html -->
+<h2>Two-Factor Authentication</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.otp.label_tag }}
+    {{ form.otp }}
+    <button type="submit">Verify OTP</button>
+</form>

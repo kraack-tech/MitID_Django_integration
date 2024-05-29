@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup OTP</title>
+</head>
+<body>
+    <h2>Setup OTP</h2>
+    <p>Scan the QR code below with your mobile authenticator application to setup OTP 2FA:</p>
+    <img src="data:image/png;base64,{{ qr_code }}" alt="QR Code">
+    </br>
+    </br>
+    <a href="{% url 'index' %}">Return </a>
+</body>
+</html>

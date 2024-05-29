@@ -1,0 +1,8 @@
+<!-- disable_2fa.html -->
+{% block content %}
+<h2>Disable Two-Factor Authentication</h2>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Disable 2FA</button>
+</form>
+{% endblock %}
