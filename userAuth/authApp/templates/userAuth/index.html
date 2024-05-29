@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://unpkg.com/@criipto/auth-js"></script> <!-- Criipto SDK Script -->
+
     <title>Feature Prototype: MitID and alternative authentication methods</title>
 </head>
 <body>
@@ -19,7 +21,23 @@
         <p>You are not logged in.</p>
     </br></br>
         <a href="{% url 'login' %}">Login</a> </br></br>
-        <a href="{% url 'mitid_login' %}">Login with MitID</a></br></br>
+        <button id="login-button-popup">Login with MitID</button>
+
+        <script type="text/javascript">
+            var criiptoAuth = new CriiptoAuth({
+            domain: 'userauth2-test.criipto.id',
+            clientID: 'urn:my:application:identifier:491761',
+            store: sessionStorage,
+          });
+          document
+            .getElementById('login-button-popup')
+            .addEventListener('click', () => {
+              criiptoAuth.redirect.authorize({
+                redirectUri: 'http://localhost:8001/mitid-success/',
+                prompt: 'login',
+              });
+            });
+        </script></br></br>
         <a href="{% provider_login_url 'google' method='oauth2' %}">Login with Google</a></br></br>
         <a href="{% url 'signup' %}">Signup</a></br></br>
     {% endif %}
