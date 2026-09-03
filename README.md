@@ -1,7 +1,13 @@
 # MitID_Django_integration
- #### Multi-factor authentication feature prototype.
 
- ### Authentication methods:
- - MitID Django integration: Django integration of the Danish digital citizen ID for an Django web application
- - Social account identification using OAuth 2.0 and django-allauth library
- - Two-way factor password strengthening with one-time passwords from mobile authenticator application (e.g., Google Authenticator, Microsoft Authenticator, etc.)
+Django authentication component for integrating Danish MitID authentication, OAuth 2.0, and two-factor authentication.
+
+This repository demonstrates how to integrate multiple authentication methods in Django.
+
+![Authentication methods](methods.png)
+
+## Included Authentication Methods
+
+- MitID Django integration for the Danish digital citizen ID.
+- Social account identification using OAuth 2.0 and `django-allauth`.
+- Two-factor authentication with one-time passwords from mobile authenticator apps, such as Google Authenticator and Microsoft Authenticator.
