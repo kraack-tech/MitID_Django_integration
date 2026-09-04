@@ -1,6 +1,6 @@
 # MitID_Django_integration
 
-Django authentication component for integrating Danish MitID authentication, OAuth 2.0, and two-factor authentication.
+Django authentication component for integrating Danish MitID authentication, OAuth 2.0, or two-factor authentication.
 
 This repository demonstrates how to integrate multiple authentication methods in Django.
 
